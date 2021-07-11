@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Change Employee Details</title>
+    </h:head>
+    <h:body>
+        <h2>Change Employee Details Page</h2>
+        <h3>Please update the details of employee
+            <h:outputText value="#{myEmpManagedBean.empId}"/>
+        </h3>
+
+        <h:form>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Employee Id:"/>
+                        </td>
+                        <td>
+                            <h:outputText value="#{myEmpManagedBean.empId}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Name:"/>
+                        </td>
+                        <td>
+                            <h:outputText value="#{myEmpManagedBean.name}"/>
+                        </td>
+                        <td>
+                            <h:message for="name" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Phone no.: "/>
+                        </td>
+                        <td>
+                            <h:inputText title="Phone" required="false"
+                                         value="#{myEmpManagedBean.phone}"/>     
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Address: "/>
+                        </td>
+                        <td>
+                            <h:inputText title="Address" maxlength="50" required="false"
+                                         value="#{myEmpManagedBean.address}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Email: "/>
+                        </td>
+                        <td>
+                            <h:inputText title="Email" maxlength="40" required="false"
+                                         value="#{myEmpManagedBean.email}"/>
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td>
+                            <h:outputLabel value="User Group: "/>
+                        </td>
+                        <td>
+                            <h:outputText value="#{myEmpManagedBean.appGroup}"/>
+                        </td>
+                    </tr>                       
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Bank Account: "/>
+                        </td>
+                        <td>
+                            <h:inputText title="BnkAccId" 
+                                         required="false" maxlength="25" 
+                                         value="#{myEmpManagedBean.bnkAccId}"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p></p>
+
+            <h:commandButton id="submit" value="Submit" action="#{myEmpManagedBean.changeEmployee()}"/>
+        </h:form>
+    </h:body>
+</html>
